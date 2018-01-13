@@ -1,5 +1,5 @@
 import unittest
-from command_listener import CommandListener
+from command_listener.command_listener import CommandListener
 
 
 class TestCommandListener(unittest.TestCase):
@@ -19,3 +19,17 @@ class TestCommandListener(unittest.TestCase):
         test_string = "thanks just let me know " + \
             current_listener.command_word + " play pandora"
         self.assertTrue(current_listener.command_word_present(test_string))
+
+    def test_getting_command_with_command_word_beginning(self):
+        current_listener = CommandListener()
+        test_string = current_listener.command_word + \
+            " search youtube for starcraft two"
+        self.assertEqual(current_listener.get_command(
+            test_string), "search youtube for starcraft two")
+
+    def test_getting_command_with_command_word_middle(self):
+        current_listener = CommandListener()
+        test_string = "thanks just let me know " + \
+            current_listener.command_word + " Play pandora"
+        self.assertEqual(current_listener.get_command(
+            test_string), "play pandora")
