@@ -6,3 +6,4 @@ Playstation 3's eye
 Pythons SpeechRecognition package
 PyAudio
 FLAC
+Pianobar that's setup to auto login
