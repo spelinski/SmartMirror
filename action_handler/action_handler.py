@@ -1,9 +1,6 @@
-from pandora_player.pandora_player import PandoraPlayer
-
-
 class ActionHandler():
-    def __init__(self):
-        self.player = PandoraPlayer()
+    def __init__(self, music_player):
+        self.player = music_player
 
     def take_action(self, action_string):
         if "play pandora" in action_string:

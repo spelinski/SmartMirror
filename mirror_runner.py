@@ -1,8 +1,10 @@
 import speech_recognition as sr
 from command_listener.command_listener import CommandListener
 from action_handler.action_handler import ActionHandler, UndefinedCommandError
+from pandora_player.pandora_player import PandoraPlayer
 if __name__ == "__main__":
-    my_action_handler = ActionHandler()
+    my_muisc_player = PandoraPlayer()
+    my_action_handler = ActionHandler(my_music_player)
     try:
         r = sr.Recognizer()
         with sr.Microphone() as source:

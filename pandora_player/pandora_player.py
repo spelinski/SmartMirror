@@ -11,9 +11,6 @@ class PandoraPlayer():
         self.player = Popen(shell_command, stdin=PIPE, stdout=PIPE)
         self.first_start = True
 
-    def __del__(self):
-        self.close()
-
     def play(self):
         if self.player.poll() is None:
             if self.first_start:
