@@ -1,4 +1,4 @@
-from subprocess import PIPE, Popen
+import subprocess
 import time
 import shlex
 import platform
@@ -8,7 +8,8 @@ class PandoraPlayer():
     def __init__(self):
         shell_command = shlex.split(
             "pianobar", posix=platform.system() != "Windows")
-        self.player = Popen(shell_command, stdin=PIPE, stdout=PIPE)
+        self.player = subprocess.Popen(
+            shell_command, stdin=subprocess.PIPE, stdout=subprocess.PIPE)
         self.first_start = True
 
     def play(self):
